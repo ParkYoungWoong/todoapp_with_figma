@@ -30,7 +30,6 @@ export default function AddTodoPage() {
       <header className="flex items-center">
         <Button
           variant="secondary"
-          size="sm"
           icon="chevron_left"
           onClick={() => navigate('/')}
         />

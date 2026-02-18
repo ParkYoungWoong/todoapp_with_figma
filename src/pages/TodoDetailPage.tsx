@@ -60,7 +60,7 @@ export default function TodoDetailPage() {
         <button
           type="button"
           onClick={() => setCompleted(!completed)}
-          className="flex items-center gap-3 transition-opacity hover:opacity-80">
+          className="flex w-fit items-center gap-3 transition-opacity hover:opacity-80">
           <Checkbox
             checked={completed}
             onClick={() => setCompleted(!completed)}

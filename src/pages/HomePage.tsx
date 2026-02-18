@@ -1,5 +1,7 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router'
 import { useTodoStore } from '@/store/useTodoStore'
+import { useAuthStore } from '@/store/useAuthStore'
 import TodoItem from '@/components/TodoItem'
 import Checkbox from '@/components/Checkbox'
 import Button from '@/components/Button'
@@ -7,9 +9,19 @@ import FilterTabs, { type Filter } from '@/components/FilterTabs'
 import FloatingActionButton from '@/components/FloatingActionButton'
 
 export default function HomePage() {
+  const navigate = useNavigate()
   const todos = useTodoStore(s => s.todos)
   const setCompleted = useTodoStore(s => s.setCompleted)
   const deleteCompleted = useTodoStore(s => s.deleteCompleted)
+  const user = useAuthStore(s => s.user)
+  const logout = useAuthStore(s => s.logout)
+
+  const today = new Date().toLocaleDateString('ko-KR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    weekday: 'long'
+  })
   const [filter, setFilter] = useState<Filter>('all')
 
   const filteredTodos = todos.filter(todo => {
@@ -29,7 +41,26 @@ export default function HomePage() {
 
   return (
     <div className="mx-auto flex min-h-dvh max-w-lg flex-col px-5 pt-12 pb-24">
-      <h1 className="text-2xl font-bold">할 일</h1>
+      <div className="flex items-center gap-3">
+        <img
+          src={user?.profileImage}
+          alt="프로필"
+          className="h-10 w-10 rounded-full object-cover"
+        />
+        <div className="flex-1">
+          <h1 className="text-xl font-bold">{user?.name}</h1>
+          <p className="text-label-sub mt-0.5 text-sm">{today}</p>
+        </div>
+        <Button
+          variant="ghost"
+          size="sm"
+          icon="logout"
+          onClick={() => {
+            logout()
+            navigate('/login')
+          }}
+        />
+      </div>
 
       <div className="mt-4 flex flex-wrap items-center gap-2">
         {filteredTodos.length > 0 && (
