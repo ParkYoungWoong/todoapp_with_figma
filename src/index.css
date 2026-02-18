@@ -8,6 +8,7 @@
   --label: #1a1a1a;
   --label-sub: #526682;
   --label-on-primary: #ffffff;
+  --label-on-secondary: #526682;
   --danger: #ff4b4b;
   --border: #d5e0ec;
 }
@@ -21,6 +22,7 @@
     --danger-bg: #341924;
     --label: #ffffff;
     --label-sub: #adbcd4;
+    --label-on-secondary: #adbcd4;
     --danger: #ff4444;
     --border: #2a3546;
   }
@@ -35,6 +37,7 @@
   --color-label: var(--label);
   --color-label-sub: var(--label-sub);
   --color-label-on-primary: var(--label-on-primary);
+  --color-label-on-secondary: var(--label-on-secondary);
   --color-danger: var(--danger);
   --color-border: var(--border);
 }
@@ -48,6 +51,14 @@ button,
 a,
 [role='button'] {
   cursor: pointer;
+}
+
+.material-symbols-rounded {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 300,
+    'GRAD' 0,
+    'opsz' 20;
 }
 
 input,

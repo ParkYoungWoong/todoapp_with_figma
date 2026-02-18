@@ -26,70 +26,60 @@ export default function AddTodoPage() {
   }
 
   return (
-    <div className="mx-auto flex min-h-dvh max-w-lg flex-col px-5 pb-8 pt-4">
-      <header className="flex items-center gap-3">
-        <button
-          type="button"
+    <div className="mx-auto flex min-h-dvh max-w-lg flex-col px-5 pt-4 pb-8">
+      <header className="flex items-center">
+        <Button
+          variant="secondary"
+          size="sm"
+          icon="chevron_left"
           onClick={() => navigate('/')}
-          className="flex h-10 w-10 items-center justify-center rounded-xl text-label-sub transition-colors hover:bg-secondary">
-          <svg
-            className="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}>
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-        </button>
-        <h1 className="text-xl font-bold">할 일 추가</h1>
+        />
+        <h1 className="flex-1 text-center text-xl font-bold">할 일 추가</h1>
+        <div className="w-8" />
       </header>
 
       <div className="mt-8 flex flex-1 flex-col gap-5">
         <div>
-          <label className="mb-2 block text-sm text-label-sub">제목</label>
+          <label className="text-label-sub mb-2 block text-sm">제목</label>
           <input
             type="text"
             value={title}
             onChange={e => setTitle(e.target.value)}
             placeholder="할 일을 입력하세요"
-            className="w-full rounded-xl border border-border bg-secondary px-4 py-3 outline-none placeholder:text-label-sub/50"
+            className="border-border bg-secondary placeholder:text-label-sub/50 w-full rounded-xl border px-4 py-3 outline-none"
             autoFocus
           />
         </div>
 
         <div className="flex gap-3">
           <div className="flex-1">
-            <label className="mb-2 block text-sm text-label-sub">날짜</label>
+            <label className="text-label-sub mb-2 block text-sm">날짜</label>
             <input
               type="date"
               value={date}
               onChange={e => setDate(e.target.value)}
-              className="w-full rounded-xl border border-border bg-secondary px-4 py-3 outline-none"
+              className="border-border bg-secondary w-full rounded-xl border px-4 py-3 outline-none"
             />
           </div>
           <div className="flex-1">
-            <label className="mb-2 block text-sm text-label-sub">시간</label>
+            <label className="text-label-sub mb-2 block text-sm">시간</label>
             <input
               type="time"
               value={time}
               onChange={e => setTime(e.target.value)}
-              className="w-full rounded-xl border border-border bg-secondary px-4 py-3 outline-none"
+              className="border-border bg-secondary w-full rounded-xl border px-4 py-3 outline-none"
             />
           </div>
         </div>
 
         <div>
-          <label className="mb-2 block text-sm text-label-sub">메모</label>
+          <label className="text-label-sub mb-2 block text-sm">메모</label>
           <textarea
             value={memo}
             onChange={e => setMemo(e.target.value)}
             placeholder="메모를 입력하세요"
             rows={4}
-            className="w-full resize-none rounded-xl border border-border bg-secondary px-4 py-3 outline-none placeholder:text-label-sub/50"
+            className="border-border bg-secondary placeholder:text-label-sub/50 w-full resize-none rounded-xl border px-4 py-3 outline-none"
           />
         </div>
       </div>

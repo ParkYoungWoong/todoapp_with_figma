@@ -1,3 +1,5 @@
+import Button from '@/components/Button'
+
 export type Filter = 'all' | 'active' | 'completed'
 
 const filters: { key: Filter; label: string }[] = [
@@ -15,17 +17,13 @@ export default function FilterTabs({ value, onChange }: FilterTabsProps) {
   return (
     <>
       {filters.map(f => (
-        <button
+        <Button
           key={f.key}
-          type="button"
-          onClick={() => onChange(f.key)}
-          className={`rounded-lg px-3.5 py-1.5 text-sm font-medium transition-colors ${
-            value === f.key
-              ? 'bg-primary text-label-on-primary'
-              : 'bg-secondary text-label-sub hover:brightness-95 dark:hover:brightness-110'
-          }`}>
+          variant={value === f.key ? 'primary' : 'secondary'}
+          size="sm"
+          onClick={() => onChange(f.key)}>
           {f.label}
-        </button>
+        </Button>
       ))}
     </>
   )

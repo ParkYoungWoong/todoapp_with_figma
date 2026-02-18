@@ -1,3 +1,5 @@
+import Icon from '@/components/Icon'
+
 interface CheckboxProps {
   checked: boolean
   indeterminate?: boolean
@@ -23,26 +25,14 @@ export default function Checkbox({
             : 'border-label-sub/30'
       } ${className}`}>
       {(checked || indeterminate) && (
-        <svg
-          className="text-label-on-primary h-3.5 w-3.5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={3}>
-          {checked ? (
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M5 13l4 4L19 7"
-            />
-          ) : (
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M5 12h14"
-            />
-          )}
-        </svg>
+        <Icon
+          name={checked ? 'check' : 'remove'}
+          size={20}
+          className="text-label-on-primary"
+          style={{
+            fontVariationSettings: "'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20"
+          }}
+        />
       )}
     </button>
   )
