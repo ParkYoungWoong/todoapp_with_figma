@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import { useTodoStore } from '@/store/useTodoStore'
 import { useAuthStore } from '@/store/useAuthStore'
+import { useThemeStore } from '@/store/useThemeStore'
 import TodoItem from '@/components/TodoItem'
 import Checkbox from '@/components/Checkbox'
 import Button from '@/components/Button'
@@ -15,6 +16,8 @@ export default function HomePage() {
   const deleteCompleted = useTodoStore(s => s.deleteCompleted)
   const user = useAuthStore(s => s.user)
   const logout = useAuthStore(s => s.logout)
+  const theme = useThemeStore(s => s.theme)
+  const toggleTheme = useThemeStore(s => s.toggle)
 
   const today = new Date().toLocaleDateString('ko-KR', {
     year: 'numeric',
@@ -51,6 +54,12 @@ export default function HomePage() {
           <h1 className="text-xl font-bold">{user?.name}</h1>
           <p className="text-label-sub mt-0.5 text-sm">{today}</p>
         </div>
+        <Button
+          variant="ghost"
+          size="sm"
+          icon={theme === 'dark' ? 'light_mode' : 'dark_mode'}
+          onClick={toggleTheme}
+        />
         <Button
           variant="ghost"
           size="sm"
