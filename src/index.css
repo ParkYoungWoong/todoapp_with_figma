@@ -9,6 +9,7 @@
   --label-sub: #526682;
   --label-on-primary: #ffffff;
   --danger: #ff4b4b;
+  --border: #d5e0ec;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,6 +22,7 @@
     --label: #ffffff;
     --label-sub: #adbcd4;
     --danger: #ff4444;
+    --border: #2a3546;
   }
 }
 
@@ -34,11 +36,18 @@
   --color-label-sub: var(--label-sub);
   --color-label-on-primary: var(--label-on-primary);
   --color-danger: var(--danger);
+  --color-border: var(--border);
 }
 
 body {
   background-color: var(--surface);
   color: var(--label);
+}
+
+button,
+a,
+[role='button'] {
+  cursor: pointer;
 }
 
 input,

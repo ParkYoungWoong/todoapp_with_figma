@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import { useTodoStore } from '@/store/useTodoStore'
+import Button from '@/components/Button'
 
 export default function AddTodoPage() {
   const navigate = useNavigate()
@@ -30,7 +31,7 @@ export default function AddTodoPage() {
         <button
           type="button"
           onClick={() => navigate('/')}
-          className="flex h-10 w-10 items-center justify-center rounded-xl text-label-sub">
+          className="flex h-10 w-10 items-center justify-center rounded-xl text-label-sub transition-colors hover:bg-secondary">
           <svg
             className="h-5 w-5"
             fill="none"
@@ -55,7 +56,7 @@ export default function AddTodoPage() {
             value={title}
             onChange={e => setTitle(e.target.value)}
             placeholder="할 일을 입력하세요"
-            className="w-full rounded-xl bg-secondary px-4 py-3 outline-none placeholder:text-label-sub/50"
+            className="w-full rounded-xl border border-border bg-secondary px-4 py-3 outline-none placeholder:text-label-sub/50"
             autoFocus
           />
         </div>
@@ -67,7 +68,7 @@ export default function AddTodoPage() {
               type="date"
               value={date}
               onChange={e => setDate(e.target.value)}
-              className="w-full rounded-xl bg-secondary px-4 py-3 outline-none"
+              className="w-full rounded-xl border border-border bg-secondary px-4 py-3 outline-none"
             />
           </div>
           <div className="flex-1">
@@ -76,7 +77,7 @@ export default function AddTodoPage() {
               type="time"
               value={time}
               onChange={e => setTime(e.target.value)}
-              className="w-full rounded-xl bg-secondary px-4 py-3 outline-none"
+              className="w-full rounded-xl border border-border bg-secondary px-4 py-3 outline-none"
             />
           </div>
         </div>
@@ -88,18 +89,17 @@ export default function AddTodoPage() {
             onChange={e => setMemo(e.target.value)}
             placeholder="메모를 입력하세요"
             rows={4}
-            className="w-full resize-none rounded-xl bg-secondary px-4 py-3 outline-none placeholder:text-label-sub/50"
+            className="w-full resize-none rounded-xl border border-border bg-secondary px-4 py-3 outline-none placeholder:text-label-sub/50"
           />
         </div>
       </div>
 
-      <button
-        type="button"
+      <Button
         onClick={handleSubmit}
         disabled={!title.trim()}
-        className="mt-6 w-full rounded-xl bg-primary py-4 font-semibold text-label-on-primary transition-opacity disabled:opacity-40">
+        className="mt-6 w-full">
         추가하기
-      </button>
+      </Button>
     </div>
   )
 }

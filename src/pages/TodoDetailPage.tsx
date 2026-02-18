@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router'
 import { useTodoStore } from '@/store/useTodoStore'
+import Checkbox from '@/components/Checkbox'
+import Button from '@/components/Button'
 
 export default function TodoDetailPage() {
   const { id } = useParams<{ id: string }>()
@@ -46,7 +48,7 @@ export default function TodoDetailPage() {
         <button
           type="button"
           onClick={() => navigate('/')}
-          className="flex h-10 w-10 items-center justify-center rounded-xl text-label-sub">
+          className="flex h-10 w-10 items-center justify-center rounded-xl text-label-sub transition-colors hover:bg-secondary">
           <svg
             className="h-5 w-5"
             fill="none"
@@ -67,26 +69,11 @@ export default function TodoDetailPage() {
         <button
           type="button"
           onClick={() => setCompleted(!completed)}
-          className="flex items-center gap-3">
-          <span
-            className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 transition-colors ${
-              completed ? 'border-primary bg-primary' : 'border-label-sub'
-            }`}>
-            {completed && (
-              <svg
-                className="h-3 w-3 text-label-on-primary"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={3}>
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-            )}
-          </span>
+          className="flex items-center gap-3 transition-opacity hover:opacity-80">
+          <Checkbox
+            checked={completed}
+            onClick={() => setCompleted(!completed)}
+          />
           <span className="text-sm text-label-sub">완료</span>
         </button>
 
@@ -96,7 +83,7 @@ export default function TodoDetailPage() {
             type="text"
             value={title}
             onChange={e => setTitle(e.target.value)}
-            className="w-full rounded-xl bg-secondary px-4 py-3 outline-none"
+            className="w-full rounded-xl border border-border bg-secondary px-4 py-3 outline-none"
           />
         </div>
 
@@ -107,7 +94,7 @@ export default function TodoDetailPage() {
               type="date"
               value={date}
               onChange={e => setDate(e.target.value)}
-              className="w-full rounded-xl bg-secondary px-4 py-3 outline-none"
+              className="w-full rounded-xl border border-border bg-secondary px-4 py-3 outline-none"
             />
           </div>
           <div className="flex-1">
@@ -116,7 +103,7 @@ export default function TodoDetailPage() {
               type="time"
               value={time}
               onChange={e => setTime(e.target.value)}
-              className="w-full rounded-xl bg-secondary px-4 py-3 outline-none"
+              className="w-full rounded-xl border border-border bg-secondary px-4 py-3 outline-none"
             />
           </div>
         </div>
@@ -128,25 +115,24 @@ export default function TodoDetailPage() {
             onChange={e => setMemo(e.target.value)}
             placeholder="메모를 입력하세요"
             rows={4}
-            className="w-full resize-none rounded-xl bg-secondary px-4 py-3 outline-none placeholder:text-label-sub/50"
+            className="w-full resize-none rounded-xl border border-border bg-secondary px-4 py-3 outline-none placeholder:text-label-sub/50"
           />
         </div>
       </div>
 
       <div className="mt-6 flex gap-3">
-        <button
-          type="button"
+        <Button
+          variant="danger"
           onClick={handleDelete}
-          className="flex-1 rounded-xl bg-danger-bg py-4 font-semibold text-danger">
+          className="flex-1">
           삭제
-        </button>
-        <button
-          type="button"
+        </Button>
+        <Button
           onClick={handleSave}
           disabled={!title.trim()}
-          className="flex-1 rounded-xl bg-primary py-4 font-semibold text-label-on-primary transition-opacity disabled:opacity-40">
+          className="flex-1">
           저장
-        </button>
+        </Button>
       </div>
     </div>
   )
