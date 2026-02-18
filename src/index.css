@@ -1,0 +1,48 @@
+@import 'tailwindcss';
+
+:root {
+  --surface: #ffffff;
+  --primary: #3c94ff;
+  --secondary: #e7f0f9;
+  --danger-bg: #f9d9e4;
+  --label: #1a1a1a;
+  --label-sub: #526682;
+  --label-on-primary: #ffffff;
+  --danger: #ff4b4b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --surface: #101822;
+    --primary: #0d6efd;
+    --secondary: #1e293b;
+    --danger-bg: #341924;
+    --label: #ffffff;
+    --label-sub: #adbcd4;
+    --danger: #ff4444;
+  }
+}
+
+@theme inline {
+  --font-sans: 'Pretendard Variable', 'Pretendard', system-ui, sans-serif;
+  --color-surface: var(--surface);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-danger-bg: var(--danger-bg);
+  --color-label: var(--label);
+  --color-label-sub: var(--label-sub);
+  --color-label-on-primary: var(--label-on-primary);
+  --color-danger: var(--danger);
+}
+
+body {
+  background-color: var(--surface);
+  color: var(--label);
+}
+
+input,
+textarea,
+select {
+  color: inherit;
+}
