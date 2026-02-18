@@ -33,14 +33,12 @@ export default function LoginPage() {
               setEmail(e.target.value)
               setError('')
             }}
-            className="border-border bg-secondary placeholder:text-label-sub/50 w-full rounded-xl border px-4 py-3 outline-none"
+            className="border-border bg-secondary placeholder:text-label-sub/50 focus:border-primary w-full rounded-xl border px-4 py-3 outline-none"
           />
         </div>
 
         <div>
-          <label className="text-label-sub mb-2 block text-sm">
-            비밀번호
-          </label>
+          <label className="text-label-sub mb-2 block text-sm">비밀번호</label>
           <input
             type="password"
             value={password}
@@ -48,13 +46,11 @@ export default function LoginPage() {
               setPassword(e.target.value)
               setError('')
             }}
-            className="border-border bg-secondary placeholder:text-label-sub/50 w-full rounded-xl border px-4 py-3 outline-none"
+            className="border-border bg-secondary placeholder:text-label-sub/50 focus:border-primary w-full rounded-xl border px-4 py-3 outline-none"
           />
         </div>
 
-        {error && (
-          <p className="text-danger text-center text-sm">{error}</p>
-        )}
+        {error && <p className="text-danger text-center text-sm">{error}</p>}
 
         <Button
           onClick={handleSubmit}
@@ -62,6 +58,13 @@ export default function LoginPage() {
           className="w-full">
           로그인
         </Button>
+
+        <button
+          type="button"
+          onClick={() => navigate('/signup')}
+          className="text-label-sub text-sm hover:underline">
+          계정이 없으신가요? 회원가입
+        </button>
       </div>
     </div>
   )

@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router'
 import { useTodoStore } from '@/store/useTodoStore'
-import Checkbox from '@/components/Checkbox'
 import Button from '@/components/Button'
+import ListButton from '@/components/ListButton'
 
 export default function TodoDetailPage() {
   const { id } = useParams<{ id: string }>()
@@ -44,31 +44,23 @@ export default function TodoDetailPage() {
 
   return (
     <div className="mx-auto flex min-h-dvh max-w-lg flex-col px-5 pt-4 pb-8">
-      <header className="flex items-center">
+      <header className="flex items-center gap-3">
         <Button
           variant="secondary"
           icon="chevron_left"
           onClick={() => navigate('/')}
         />
-        <h1 className="flex-1 text-center text-xl font-bold">
-          할 일 상세 및 수정
-        </h1>
-        <div className="w-8" />
+        <h1 className="flex-1 text-xl font-bold">할 일 상세 및 수정</h1>
       </header>
 
       <div className="mt-8 flex flex-1 flex-col gap-5">
-        <button
-          type="button"
+        <ListButton
+          variant={completed ? 'active' : 'default'}
+          icon={completed ? 'check_circle' : 'radio_button_unchecked'}
+          label={completed ? '완료됨' : '미완료'}
+          trailing={completed ? 'check' : undefined}
           onClick={() => setCompleted(!completed)}
-          className="flex w-fit items-center gap-3 transition-opacity hover:opacity-80">
-          <Checkbox
-            checked={completed}
-            onClick={() => setCompleted(!completed)}
-          />
-          <span className="text-label-sub text-sm">
-            {completed ? '완료됨' : '미완료'}
-          </span>
-        </button>
+        />
 
         <div>
           <label className="text-label-sub mb-2 block text-sm">제목</label>
@@ -76,29 +68,27 @@ export default function TodoDetailPage() {
             type="text"
             value={title}
             onChange={e => setTitle(e.target.value)}
-            className="border-border bg-secondary w-full rounded-xl border px-4 py-3 outline-none"
+            className="border-border bg-secondary focus:border-primary w-full rounded-xl border px-4 py-3 outline-none"
           />
         </div>
 
-        <div className="flex gap-3">
-          <div className="flex-1">
-            <label className="text-label-sub mb-2 block text-sm">날짜</label>
-            <input
-              type="date"
-              value={date}
-              onChange={e => setDate(e.target.value)}
-              className="border-border bg-secondary w-full rounded-xl border px-4 py-3 outline-none"
-            />
-          </div>
-          <div className="flex-1">
-            <label className="text-label-sub mb-2 block text-sm">시간</label>
-            <input
-              type="time"
-              value={time}
-              onChange={e => setTime(e.target.value)}
-              className="border-border bg-secondary w-full rounded-xl border px-4 py-3 outline-none"
-            />
-          </div>
+        <div>
+          <label className="text-label-sub mb-2 block text-sm">날짜</label>
+          <input
+            type="date"
+            value={date}
+            onChange={e => setDate(e.target.value)}
+            className="border-border bg-secondary focus:border-primary w-full rounded-xl border px-4 py-3 outline-none"
+          />
+        </div>
+        <div>
+          <label className="text-label-sub mb-2 block text-sm">시간</label>
+          <input
+            type="time"
+            value={time}
+            onChange={e => setTime(e.target.value)}
+            className="border-border bg-secondary focus:border-primary w-full rounded-xl border px-4 py-3 outline-none"
+          />
         </div>
 
         <div>
@@ -108,7 +98,7 @@ export default function TodoDetailPage() {
             onChange={e => setMemo(e.target.value)}
             placeholder="메모를 입력하세요"
             rows={4}
-            className="border-border bg-secondary placeholder:text-label-sub/50 w-full resize-none rounded-xl border px-4 py-3 outline-none"
+            className="border-border bg-secondary placeholder:text-label-sub/50 focus:border-primary w-full resize-none rounded-xl border px-4 py-3 outline-none"
           />
         </div>
       </div>
