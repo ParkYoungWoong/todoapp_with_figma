@@ -13,7 +13,7 @@ export default function FloatingActionButton({
   onClick
 }: FloatingActionButtonProps) {
   const className =
-    'bg-primary text-label-on-primary pointer-events-auto flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-all hover:brightness-110 active:scale-95'
+    'bg-primary text-label-on-primary pointer-events-auto flex h-14 w-14 shrink-0 cursor-pointer items-center justify-center rounded-full shadow-lg transition-all hover:brightness-110 active:scale-95'
 
   return (
     <div className="pointer-events-none fixed inset-x-0 bottom-0">

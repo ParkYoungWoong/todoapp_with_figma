@@ -38,11 +38,11 @@ export default function HomePage() {
   }
 
   return (
-    <div className="mx-auto flex min-h-dvh max-w-lg flex-col px-5 pt-12 pb-24">
+    <div className="mx-auto flex min-h-dvh max-w-lg flex-col px-5 pt-6 pb-24">
       <div className="flex items-center justify-between">
         <Link
           to="/settings"
-          className="flex items-center gap-3 transition-opacity hover:opacity-80">
+          className="flex cursor-pointer items-center gap-3 transition-opacity hover:opacity-80">
           <img
             src={user?.profileImage}
             alt="프로필"
@@ -54,14 +54,21 @@ export default function HomePage() {
       </div>
 
       <div className="mt-4 flex flex-wrap items-center gap-2">
-        {filteredTodos.length > 0 && (
-          <div className="rounded-lg py-1.5 pr-2 pl-[17px]">
-            <Checkbox
-              checked={allChecked}
-              indeterminate={someChecked}
-              onClick={handleToggleAll}
-            />
-          </div>
+        <div className="pr-2 pl-[17px]">
+          <Checkbox
+            checked={allChecked}
+            indeterminate={someChecked}
+            onClick={handleToggleAll}
+            disabled={filter !== 'all' || filteredTodos.length === 0}
+          />
+        </div>
+        {filter !== 'active' && todos.some(t => t.completed) && (
+          <Button
+            variant="danger"
+            size="sm"
+            onClick={deleteCompleted}>
+            삭제
+          </Button>
         )}
 
         <div className="ml-auto flex items-center gap-2">
@@ -69,14 +76,6 @@ export default function HomePage() {
             value={filter}
             onChange={setFilter}
           />
-          {todos.some(t => t.completed) && (
-            <Button
-              variant="danger"
-              size="sm"
-              icon="delete"
-              onClick={deleteCompleted}
-            />
-          )}
         </div>
       </div>
 
@@ -87,7 +86,7 @@ export default function HomePage() {
           </p>
         </div>
       ) : (
-        <ul className="mt-4 flex flex-col gap-3">
+        <ul className="mt-4 flex flex-col gap-4">
           {filteredTodos.map(todo => (
             <TodoItem
               key={todo.id}

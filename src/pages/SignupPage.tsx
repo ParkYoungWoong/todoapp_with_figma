@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import { useAuthStore, type Gender } from '@/store/useAuthStore'
 import Button from '@/components/Button'
+import Input from '@/components/Input'
 import ListButton from '@/components/ListButton'
 
 const genderOptions: { key: Gender; label: string; icon: string }[] = [
@@ -30,56 +31,42 @@ export default function SignupPage() {
     }
   }
 
-  const inputClass =
-    'border-border bg-secondary placeholder:text-label-sub/50 w-full rounded-xl border px-4 py-3 outline-none focus:border-primary'
-
   return (
     <div className="mx-auto flex min-h-dvh max-w-lg flex-col justify-center px-5 pb-8">
       <h1 className="text-center text-2xl font-bold">회원가입</h1>
 
-      <div className="mt-8 flex flex-col gap-5">
-        <div>
-          <label className="text-label-sub mb-2 block text-sm">이름</label>
-          <input
-            type="text"
-            value={name}
-            onChange={e => {
-              setName(e.target.value)
-              setError('')
-            }}
-            placeholder="이름을 입력하세요"
-            className={inputClass}
-            autoFocus
-          />
-        </div>
-
-        <div>
-          <label className="text-label-sub mb-2 block text-sm">이메일</label>
-          <input
-            type="email"
-            value={email}
-            onChange={e => {
-              setEmail(e.target.value)
-              setError('')
-            }}
-            placeholder="이메일을 입력하세요"
-            className={inputClass}
-          />
-        </div>
-
-        <div>
-          <label className="text-label-sub mb-2 block text-sm">비밀번호</label>
-          <input
-            type="password"
-            value={password}
-            onChange={e => {
-              setPassword(e.target.value)
-              setError('')
-            }}
-            placeholder="비밀번호를 입력하세요"
-            className={inputClass}
-          />
-        </div>
+      <div className="mt-8 flex flex-col gap-4">
+        <Input
+          label="이름"
+          type="text"
+          value={name}
+          onChange={e => {
+            setName(e.target.value)
+            setError('')
+          }}
+          placeholder="이름을 입력하세요"
+          autoFocus
+        />
+        <Input
+          label="이메일"
+          type="email"
+          value={email}
+          onChange={e => {
+            setEmail(e.target.value)
+            setError('')
+          }}
+          placeholder="이메일을 입력하세요"
+        />
+        <Input
+          label="비밀번호"
+          type="password"
+          value={password}
+          onChange={e => {
+            setPassword(e.target.value)
+            setError('')
+          }}
+          placeholder="비밀번호를 입력하세요"
+        />
 
         <div>
           <label className="text-label-sub mb-2 block text-sm">성별</label>
@@ -109,7 +96,7 @@ export default function SignupPage() {
         <button
           type="button"
           onClick={() => navigate('/login')}
-          className="text-label-sub text-sm hover:underline">
+          className="text-label-sub cursor-pointer text-sm hover:underline">
           이미 계정이 있으신가요? 로그인
         </button>
       </div>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ListButton Component</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Pretendard Variable', 'Pretendard', system-ui, sans-serif; }
+    .material-symbols-rounded { font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 20; }
+
+    .section {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .section.light { background: #ffffff; color: #1a1a1a; }
+    .section.dark { background: #101822; color: #ffffff; }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      opacity: 0.5;
+    }
+
+    .variant-group {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .variant-label {
+      font-size: 13px;
+      opacity: 0.6;
+      margin-bottom: 4px;
+    }
+
+    /* ListButton */
+    .list-button {
+      display: flex;
+      width: 360px;
+      flex-shrink: 0;
+      align-items: center;
+      gap: 12px;
+      border-radius: 12px;
+      padding: 14px 16px;
+      border: 1px solid transparent;
+      font: inherit;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .list-button .icon-leading {
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    .list-button .label {
+      flex: 1;
+      text-align: left;
+    }
+    .list-button .icon-trailing {
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    /* Light - Default */
+    .light .list-button.default {
+      background: #e7f0f9;
+      color: #1a1a1a;
+    }
+    .light .list-button.default .icon-trailing { color: #526682; }
+
+    /* Light - Active */
+    .light .list-button.active {
+      background: rgba(60, 148, 255, 0.1);
+      color: #3c94ff;
+    }
+    .light .list-button.active .icon-trailing { color: #526682; }
+
+    /* Light - Danger */
+    .light .list-button.danger {
+      background: #f9d9e4;
+      color: #ff4b4b;
+    }
+    .light .list-button.danger .icon-trailing { color: #526682; }
+
+    /* Dark - Default */
+    .dark .list-button.default {
+      background: #1e293b;
+      color: #ffffff;
+    }
+    .dark .list-button.default .icon-trailing { color: #adbcd4; }
+
+    /* Dark - Active */
+    .dark .list-button.active {
+      background: rgba(13, 110, 253, 0.1);
+      color: #0d6efd;
+    }
+    .dark .list-button.active .icon-trailing { color: #adbcd4; }
+
+    /* Dark - Danger */
+    .dark .list-button.danger {
+      background: #341924;
+      color: #ff4444;
+    }
+    .dark .list-button.danger .icon-trailing { color: #adbcd4; }
+  </style>
+</head>
+<body>
+
+  <!-- Light Mode -->
+  <div class="section light">
+    <div class="section-title">ListButton / Light</div>
+    <div class="variant-group">
+
+      <div class="variant-label">Default</div>
+      <div class="list-button default">
+        <span class="material-symbols-rounded icon-leading">dark_mode</span>
+        <span class="label">다크 모드</span>
+        <span class="material-symbols-rounded icon-trailing">chevron_right</span>
+      </div>
+
+      <div class="variant-label">Default (no trailing)</div>
+      <div class="list-button default">
+        <span class="material-symbols-rounded icon-leading">person</span>
+        <span class="label">프로필 설정</span>
+      </div>
+
+      <div class="variant-label">Active</div>
+      <div class="list-button active">
+        <span class="material-symbols-rounded icon-leading">light_mode</span>
+        <span class="label">라이트 모드</span>
+        <span class="material-symbols-rounded icon-trailing">chevron_right</span>
+      </div>
+
+      <div class="variant-label">Danger</div>
+      <div class="list-button danger">
+        <span class="material-symbols-rounded icon-leading">logout</span>
+        <span class="label">로그아웃</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Dark Mode -->
+  <div class="section dark">
+    <div class="section-title">ListButton / Dark</div>
+    <div class="variant-group">
+
+      <div class="variant-label">Default</div>
+      <div class="list-button default">
+        <span class="material-symbols-rounded icon-leading">dark_mode</span>
+        <span class="label">다크 모드</span>
+        <span class="material-symbols-rounded icon-trailing">chevron_right</span>
+      </div>
+
+      <div class="variant-label">Default (no trailing)</div>
+      <div class="list-button default">
+        <span class="material-symbols-rounded icon-leading">person</span>
+        <span class="label">프로필 설정</span>
+      </div>
+
+      <div class="variant-label">Active</div>
+      <div class="list-button active">
+        <span class="material-symbols-rounded icon-leading">light_mode</span>
+        <span class="label">라이트 모드</span>
+        <span class="material-symbols-rounded icon-trailing">chevron_right</span>
+      </div>
+
+      <div class="variant-label">Danger</div>
+      <div class="list-button danger">
+        <span class="material-symbols-rounded icon-leading">logout</span>
+        <span class="label">로그아웃</span>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

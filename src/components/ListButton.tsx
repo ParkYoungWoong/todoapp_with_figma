@@ -27,7 +27,7 @@ export default function ListButton({
   return (
     <button
       type="button"
-      className={`flex w-full items-center gap-3 rounded-xl px-4 py-3.5 transition-colors ${variants[variant]} ${className}`}
+      className={`flex w-full shrink-0 cursor-pointer items-center gap-3 rounded-xl px-4 py-3.5 transition-colors ${variants[variant]} ${className}`}
       {...props}>
       <Icon
         name={icon}

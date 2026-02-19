@@ -17,7 +17,7 @@ const sizes = {
 }
 
 const iconSizes = {
-  md: 24,
+  md: 26,
   sm: 18
 }
 
@@ -38,7 +38,7 @@ export default function Button({
   return (
     <button
       type="button"
-      className={`flex items-center justify-center gap-2 transition-all ${sizes[size]} ${variants[variant]} ${className}`}
+      className={`flex shrink-0 cursor-pointer items-center justify-center gap-2 transition-all disabled:cursor-default ${sizes[size]} ${variants[variant]} ${className}`}
       {...props}>
       {icon && (
         <Icon

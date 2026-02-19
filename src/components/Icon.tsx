@@ -7,12 +7,7 @@ interface IconProps {
   style?: CSSProperties
 }
 
-export default function Icon({
-  name,
-  size = 24,
-  className = '',
-  style
-}: IconProps) {
+export default function Icon({ name, size, className = '', style }: IconProps) {
   return (
     <span
       className={`material-symbols-rounded leading-none ${className}`}

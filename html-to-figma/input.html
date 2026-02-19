@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Input &amp; Textarea Components</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Pretendard Variable', 'Pretendard', system-ui, sans-serif; }
+
+    .section {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .section.light { background: #ffffff; color: #1a1a1a; }
+    .section.dark { background: #101822; color: #ffffff; }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      opacity: 0.5;
+    }
+
+    .variant-group {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .variant-label {
+      font-size: 13px;
+      opacity: 0.6;
+      margin-bottom: 4px;
+    }
+
+    /* Field */
+    .field { width: 360px; }
+    .field-label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .light .field-label { color: #526682; }
+    .dark .field-label { color: #adbcd4; }
+
+    /* Input / Textarea base */
+    .input,
+    .textarea {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid;
+      padding: 12px 16px;
+      font: inherit;
+      font-size: 16px;
+      outline: none;
+    }
+    .textarea {
+      resize: none;
+      min-height: 120px;
+    }
+
+    /* Light */
+    .light .input,
+    .light .textarea {
+      background: #e7f0f9;
+      border-color: #d5e0ec;
+      color: #1a1a1a;
+    }
+    .light .input::placeholder,
+    .light .textarea::placeholder { color: rgba(82, 102, 130, 0.5); }
+    .light .input.focused,
+    .light .textarea.focused { border-color: #3c94ff; }
+
+    /* Dark */
+    .dark .input,
+    .dark .textarea {
+      background: #1e293b;
+      border-color: #2a3546;
+      color: #ffffff;
+    }
+    .dark .input::placeholder,
+    .dark .textarea::placeholder { color: rgba(173, 188, 212, 0.5); }
+    .dark .input.focused,
+    .dark .textarea.focused { border-color: #0d6efd; }
+  </style>
+</head>
+<body>
+
+  <!-- Light Mode -->
+  <div class="section light">
+    <div class="section-title">Input / Light</div>
+    <div class="variant-group">
+
+      <div>
+        <div class="variant-label">Placeholder</div>
+        <div class="field">
+          <label class="field-label">제목</label>
+          <input class="input" type="text" placeholder="할 일을 입력하세요" />
+        </div>
+      </div>
+
+      <div>
+        <div class="variant-label">Filled</div>
+        <div class="field">
+          <label class="field-label">제목</label>
+          <input class="input" type="text" value="프로젝트 기획서 작성하기" />
+        </div>
+      </div>
+
+      <div>
+        <div class="variant-label">Focused</div>
+        <div class="field">
+          <label class="field-label">제목</label>
+          <input class="input focused" type="text" value="프로젝트 기획서 작성하기" />
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section-title">Textarea / Light</div>
+    <div class="variant-group">
+
+      <div>
+        <div class="variant-label">Placeholder</div>
+        <div class="field">
+          <label class="field-label">메모</label>
+          <textarea class="textarea" placeholder="메모를 입력하세요" rows="4"></textarea>
+        </div>
+      </div>
+
+      <div>
+        <div class="variant-label">Filled</div>
+        <div class="field">
+          <label class="field-label">메모</label>
+          <textarea class="textarea" rows="4">회의 전에 자료 준비하기. 참석자 명단 확인 필요.</textarea>
+        </div>
+      </div>
+
+      <div>
+        <div class="variant-label">Focused</div>
+        <div class="field">
+          <label class="field-label">메모</label>
+          <textarea class="textarea focused" rows="4">회의 전에 자료 준비하기. 참석자 명단 확인 필요.</textarea>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Dark Mode -->
+  <div class="section dark">
+    <div class="section-title">Input / Dark</div>
+    <div class="variant-group">
+
+      <div>
+        <div class="variant-label">Placeholder</div>
+        <div class="field">
+          <label class="field-label">제목</label>
+          <input class="input" type="text" placeholder="할 일을 입력하세요" />
+        </div>
+      </div>
+
+      <div>
+        <div class="variant-label">Filled</div>
+        <div class="field">
+          <label class="field-label">제목</label>
+          <input class="input" type="text" value="프로젝트 기획서 작성하기" />
+        </div>
+      </div>
+
+      <div>
+        <div class="variant-label">Focused</div>
+        <div class="field">
+          <label class="field-label">제목</label>
+          <input class="input focused" type="text" value="프로젝트 기획서 작성하기" />
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section-title">Textarea / Dark</div>
+    <div class="variant-group">
+
+      <div>
+        <div class="variant-label">Placeholder</div>
+        <div class="field">
+          <label class="field-label">메모</label>
+          <textarea class="textarea" placeholder="메모를 입력하세요" rows="4"></textarea>
+        </div>
+      </div>
+
+      <div>
+        <div class="variant-label">Filled</div>
+        <div class="field">
+          <label class="field-label">메모</label>
+          <textarea class="textarea" rows="4">회의 전에 자료 준비하기. 참석자 명단 확인 필요.</textarea>
+        </div>
+      </div>
+
+      <div>
+        <div class="variant-label">Focused</div>
+        <div class="field">
+          <label class="field-label">메모</label>
+          <textarea class="textarea focused" rows="4">회의 전에 자료 준비하기. 참석자 명단 확인 필요.</textarea>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

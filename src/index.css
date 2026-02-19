@@ -6,12 +6,12 @@
   --surface: #ffffff;
   --primary: #3c94ff;
   --secondary: #e7f0f9;
-  --danger-bg: #f9d9e4;
   --label: #1a1a1a;
   --label-sub: #526682;
   --label-on-primary: #ffffff;
   --label-on-secondary: #526682;
   --danger: #ff4b4b;
+  --danger-bg: #f9d9e4;
   --border: #d5e0ec;
 }
 
@@ -19,7 +19,7 @@
   color-scheme: dark;
   --surface: #101822;
   --primary: #0d6efd;
-  --secondary: #1a232e;
+  --secondary: #1e293b;
   --danger-bg: #341924;
   --label: #ffffff;
   --label-sub: #adbcd4;
@@ -45,12 +45,6 @@
 body {
   background-color: var(--surface);
   color: var(--label);
-}
-
-button,
-a,
-[role='button'] {
-  cursor: pointer;
 }
 
 .material-symbols-rounded {

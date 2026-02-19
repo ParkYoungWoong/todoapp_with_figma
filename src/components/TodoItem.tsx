@@ -11,7 +11,7 @@ export default function TodoItem({ todo }: { todo: Todo }) {
     <li>
       <Link
         to={`/todo/${todo.id}`}
-        className="border-border bg-secondary flex items-start gap-3 rounded-2xl border p-4 transition-colors hover:brightness-95 dark:hover:brightness-110">
+        className="border-border bg-secondary flex cursor-pointer items-start gap-3 rounded-2xl border p-4 transition-colors hover:brightness-95 dark:hover:brightness-110">
         <Checkbox
           checked={todo.completed}
           onClick={e => {

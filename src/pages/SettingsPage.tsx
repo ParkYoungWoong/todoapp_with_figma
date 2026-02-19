@@ -40,11 +40,11 @@ export default function SettingsPage() {
           alt="프로필"
           className="h-20 w-20 rounded-full object-cover"
         />
-        <p className="mt-3 text-lg font-bold">{user?.name}</p>
+        <p className="mt-3 text-xl font-bold">{user?.name}</p>
         <p className="text-label-sub text-sm">{user?.email}</p>
       </div>
 
-      <ul className="mt-8 flex flex-col gap-3">
+      <ul className="mt-8 flex flex-col gap-4">
         <li>
           <ListButton
             icon={theme === 'dark' ? 'dark_mode' : 'light_mode'}
