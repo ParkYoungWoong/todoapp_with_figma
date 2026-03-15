@@ -50,17 +50,11 @@
   "Border": {
     "Primary": {
       "$type": "color",
-      "$value": {
-        "id": "VariableID:269:24",
-        "type": "VARIABLE_ALIAS"
-      }
+      "$value": "#000000"
     },
     "Secondary": {
       "$type": "color",
-      "$value": {
-        "id": "VariableID:269:25",
-        "type": "VARIABLE_ALIAS"
-      }
+      "$value": "#000000"
     }
   },
   "Labels": {
@@ -96,17 +90,11 @@
   "TextField": {
     "Surface": {
       "$type": "color",
-      "$value": {
-        "id": "VariableID:240:589",
-        "type": "VARIABLE_ALIAS"
-      }
+      "$value": "#000000"
     },
     "Border :focus": {
       "$type": "color",
-      "$value": {
-        "id": "VariableID:240:587",
-        "type": "VARIABLE_ALIAS"
-      }
+      "$value": "#000000"
     },
     "Border :default": {
       "$type": "color",
@@ -117,47 +105,29 @@
     "Fill": {
       "Danger": {
         "$type": "color",
-        "$value": {
-          "id": "VariableID:240:591",
-          "type": "VARIABLE_ALIAS"
-        }
+        "$value": "#000000"
       },
       "Default": {
         "$type": "color",
-        "$value": {
-          "id": "VariableID:240:589",
-          "type": "VARIABLE_ALIAS"
-        }
+        "$value": "#000000"
       },
       "Danger :hover": {
         "$type": "color",
-        "$value": {
-          "id": "VariableID:269:26",
-          "type": "VARIABLE_ALIAS"
-        }
+        "$value": "#000000"
       },
       "Default :hover": {
         "$type": "color",
-        "$value": {
-          "id": "VariableID:269:25",
-          "type": "VARIABLE_ALIAS"
-        }
+        "$value": "#000000"
       }
     },
     "Label": {
       "Danger": {
         "$type": "color",
-        "$value": {
-          "id": "VariableID:240:592",
-          "type": "VARIABLE_ALIAS"
-        }
+        "$value": "#000000"
       },
       "Default": {
         "$type": "color",
-        "$value": {
-          "id": "VariableID:266:79",
-          "type": "VARIABLE_ALIAS"
-        }
+        "$value": "#000000"
       }
     }
   }
