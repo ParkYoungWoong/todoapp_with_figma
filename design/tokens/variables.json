@@ -1,22 +1,164 @@
 {
-  "colors": {
-    "primary": {
-      "$value": "#0066FF",
+  "Text": {
+    "15": {
       "$type": "color",
-      "$description": "Primary brand color"
+      "$value": "#ffffff26"
     },
-    "secondary": {
-      "$value": "#6B7280",
+    "30": {
       "$type": "color",
-      "$description": "Secondary text color"
+      "$value": "#ffffff4d"
     },
-    "background": {
-      "$value": "#FFFFFF",
-      "$type": "color"
+    "50": {
+      "$type": "color",
+      "$value": "#ffffff80"
     },
-    "surface": {
-      "$value": "#F3F4F6",
-      "$type": "color"
+    "70": {
+      "$type": "color",
+      "$value": "#ffffffb2"
+    },
+    "100": {
+      "$type": "color",
+      "$value": "#ffffff"
+    }
+  },
+  "Fills": {
+    "Danger": {
+      "$type": "color",
+      "$value": "#341924"
+    },
+    "Primary": {
+      "$type": "color",
+      "$value": "#0d6efd"
+    },
+    "Secondary": {
+      "$type": "color",
+      "$value": "#1e293b"
+    },
+    "Danger :hover": {
+      "$type": "color",
+      "$value": "#311822"
+    },
+    "Primary :hover": {
+      "$type": "color",
+      "$value": "#0e79ff"
+    },
+    "Secondary :hover": {
+      "$type": "color",
+      "$value": "#1d2738"
+    }
+  },
+  "Border": {
+    "Primary": {
+      "$type": "color",
+      "$value": {
+        "id": "VariableID:269:24",
+        "type": "VARIABLE_ALIAS"
+      }
+    },
+    "Secondary": {
+      "$type": "color",
+      "$value": {
+        "id": "VariableID:269:25",
+        "type": "VARIABLE_ALIAS"
+      }
+    }
+  },
+  "Labels": {
+    "Danger": {
+      "$type": "color",
+      "$value": "#ff4444"
+    },
+    "Primary": {
+      "$type": "color",
+      "$value": "#ffffff"
+    },
+    "Secondary": {
+      "$type": "color",
+      "$value": "#adbcd4"
+    },
+    "Danger :hover": {
+      "$type": "color",
+      "$value": "#f24141"
+    },
+    "Primary :hover": {
+      "$type": "color",
+      "$value": "#ffffff"
+    },
+    "Secondary :hover": {
+      "$type": "color",
+      "$value": "#a4b3c9"
+    }
+  },
+  "Surface": {
+    "$type": "color",
+    "$value": "#101822"
+  },
+  "TextField": {
+    "Surface": {
+      "$type": "color",
+      "$value": {
+        "id": "VariableID:240:589",
+        "type": "VARIABLE_ALIAS"
+      }
+    },
+    "Border :focus": {
+      "$type": "color",
+      "$value": {
+        "id": "VariableID:240:587",
+        "type": "VARIABLE_ALIAS"
+      }
+    },
+    "Border :default": {
+      "$type": "color",
+      "$value": "#2a3546"
+    }
+  },
+  "ListButton": {
+    "Fill": {
+      "Danger": {
+        "$type": "color",
+        "$value": {
+          "id": "VariableID:240:591",
+          "type": "VARIABLE_ALIAS"
+        }
+      },
+      "Default": {
+        "$type": "color",
+        "$value": {
+          "id": "VariableID:240:589",
+          "type": "VARIABLE_ALIAS"
+        }
+      },
+      "Danger :hover": {
+        "$type": "color",
+        "$value": {
+          "id": "VariableID:269:26",
+          "type": "VARIABLE_ALIAS"
+        }
+      },
+      "Default :hover": {
+        "$type": "color",
+        "$value": {
+          "id": "VariableID:269:25",
+          "type": "VARIABLE_ALIAS"
+        }
+      }
+    },
+    "Label": {
+      "Danger": {
+        "$type": "color",
+        "$value": {
+          "id": "VariableID:240:592",
+          "type": "VARIABLE_ALIAS"
+        }
+      },
+      "Default": {
+        "$type": "color",
+        "$value": {
+          "id": "VariableID:266:79",
+          "type": "VARIABLE_ALIAS"
+        }
+      }
     }
   }
 }
