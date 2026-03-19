@@ -38,44 +38,46 @@ export default function HomePage() {
   }
 
   return (
-    <div className="mx-auto flex min-h-dvh max-w-lg flex-col px-5 pt-6 pb-24">
-      <div className="flex items-center justify-between">
-        <Link
-          to="/settings"
-          className="flex cursor-pointer items-center gap-3 transition-opacity hover:opacity-80">
-          <img
-            src={user?.profileImage}
-            alt="프로필"
-            className="h-10 w-10 rounded-full object-cover"
-          />
-          <span className="text-xl font-bold">{user?.name}</span>
-        </Link>
-        <p className="text-label-sub text-sm">{today}</p>
-      </div>
-
-      <div className="mt-4 flex flex-wrap items-center gap-2">
-        <div className="pr-2 pl-[17px]">
-          <Checkbox
-            checked={allChecked}
-            indeterminate={someChecked}
-            onClick={handleToggleAll}
-            disabled={filter !== 'all' || filteredTodos.length === 0}
-          />
+    <div className="mx-auto flex min-h-dvh max-w-lg flex-col px-5 pb-24">
+      <div className="bg-surface sticky top-0 z-10 pt-6 pb-4">
+        <div className="flex items-center justify-between">
+          <Link
+            to="/settings"
+            className="flex cursor-pointer items-center gap-3 transition-opacity hover:opacity-80">
+            <img
+              src={user?.profileImage}
+              alt="프로필"
+              className="h-10 w-10 rounded-full object-cover"
+            />
+            <span className="text-xl font-bold">{user?.name}</span>
+          </Link>
+          <p className="text-label-sub text-sm">{today}</p>
         </div>
-        {filter !== 'active' && todos.some(t => t.completed) && (
-          <Button
-            variant="danger"
-            size="sm"
-            onClick={deleteCompleted}>
-            삭제
-          </Button>
-        )}
 
-        <div className="ml-auto flex items-center gap-2">
-          <FilterTabs
-            value={filter}
-            onChange={setFilter}
-          />
+        <div className="mt-4 flex flex-wrap items-center gap-2">
+          <div className="pr-2 pl-[17px]">
+            <Checkbox
+              checked={allChecked}
+              indeterminate={someChecked}
+              onClick={handleToggleAll}
+              disabled={filter !== 'all' || filteredTodos.length === 0}
+            />
+          </div>
+          {filter !== 'active' && todos.some(t => t.completed) && (
+            <Button
+              variant="danger"
+              size="sm"
+              onClick={deleteCompleted}>
+              삭제
+            </Button>
+          )}
+
+          <div className="ml-auto flex items-center gap-2">
+            <FilterTabs
+              value={filter}
+              onChange={setFilter}
+            />
+          </div>
         </div>
       </div>
 
