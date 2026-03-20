@@ -1,0 +1,134 @@
+{
+  "Text": {
+    "15": {
+      "$type": "color",
+      "$value": "#ffffff26"
+    },
+    "30": {
+      "$type": "color",
+      "$value": "#ffffff4d"
+    },
+    "50": {
+      "$type": "color",
+      "$value": "#ffffff80"
+    },
+    "70": {
+      "$type": "color",
+      "$value": "#ffffffb2"
+    },
+    "100": {
+      "$type": "color",
+      "$value": "#ffffff"
+    }
+  },
+  "Fills": {
+    "Danger": {
+      "$type": "color",
+      "$value": "#341924"
+    },
+    "Primary": {
+      "$type": "color",
+      "$value": "#0d6efd"
+    },
+    "Secondary": {
+      "$type": "color",
+      "$value": "#1e293b"
+    },
+    "Danger :hover": {
+      "$type": "color",
+      "$value": "#311822"
+    },
+    "Primary :hover": {
+      "$type": "color",
+      "$value": "#0e79ff"
+    },
+    "Secondary :hover": {
+      "$type": "color",
+      "$value": "#1d2738"
+    }
+  },
+  "Border": {
+    "Primary": {
+      "$type": "color",
+      "$value": "#000000"
+    },
+    "Secondary": {
+      "$type": "color",
+      "$value": "#000000"
+    }
+  },
+  "Labels": {
+    "Danger": {
+      "$type": "color",
+      "$value": "#ff4444"
+    },
+    "Primary": {
+      "$type": "color",
+      "$value": "#ffffff"
+    },
+    "Secondary": {
+      "$type": "color",
+      "$value": "#adbcd4"
+    },
+    "Danger :hover": {
+      "$type": "color",
+      "$value": "#f24141"
+    },
+    "Primary :hover": {
+      "$type": "color",
+      "$value": "#ffffff"
+    },
+    "Secondary :hover": {
+      "$type": "color",
+      "$value": "#a4b3c9"
+    }
+  },
+  "Surface": {
+    "$type": "color",
+    "$value": "#101822"
+  },
+  "TextField": {
+    "Surface": {
+      "$type": "color",
+      "$value": "#000000"
+    },
+    "Border :focus": {
+      "$type": "color",
+      "$value": "#000000"
+    },
+    "Border :default": {
+      "$type": "color",
+      "$value": "#2a3546"
+    }
+  },
+  "ListButton": {
+    "Fill": {
+      "Danger": {
+        "$type": "color",
+        "$value": "#000000"
+      },
+      "Default": {
+        "$type": "color",
+        "$value": "#000000"
+      },
+      "Danger :hover": {
+        "$type": "color",
+        "$value": "#000000"
+      },
+      "Default :hover": {
+        "$type": "color",
+        "$value": "#000000"
+      }
+    },
+    "Label": {
+      "Danger": {
+        "$type": "color",
+        "$value": "#000000"
+      },
+      "Default": {
+        "$type": "color",
+        "$value": "#000000"
+      }
+    }
+  }
+}
